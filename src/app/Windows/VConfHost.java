@@ -242,6 +242,7 @@ public class VConfHost extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddPackageActionPerformed
 
     private void btnAceptarConfHostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarConfHostActionPerformed
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("app/Windows/Bundle");
         this.setVisible(false);
         this.vMain.setRouting(false);
         if(ci.getLocation().x  == 0 && ci.getLocation().y == 0)
@@ -251,7 +252,7 @@ public class VConfHost extends javax.swing.JFrame {
         ci.getVertex().getElement().setName(txtNameComputer.getText());
         JPopupMenu popUpMenuHost = new JPopupMenu();
         JMenuItem miConfigurar = new JMenuItem();
-        miConfigurar.setText("Configurar Host");
+        miConfigurar.setText(bundle.getString("VConfWorkSpace"));
         miConfigurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VConfHost vConfComputer = new VConfHost(ci, vMain);
@@ -260,7 +261,7 @@ public class VConfHost extends javax.swing.JFrame {
         });
         popUpMenuHost.add(miConfigurar);
         JMenuItem miEliminar = new JMenuItem();
-        miEliminar.setText("Eliminar Host");
+        miEliminar.setText(bundle.getString("VRemoveWorkSpace"));
         miEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 si.getWorkSpacePanel().remove(ci.getLblName());

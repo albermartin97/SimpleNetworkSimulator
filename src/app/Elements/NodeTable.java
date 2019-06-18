@@ -27,6 +27,7 @@ public class NodeTable extends AbstractTableModel {
     }
 
     public NodeTable(Simulator simulator) {
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("app/Windows/Bundle");
         if (simulator != null) {
             List<Vertex<Node>> vhListComputers = simulator.getRed()
                     .getAllHosts();
@@ -63,7 +64,7 @@ public class NodeTable extends AbstractTableModel {
             TableColumn column = table.getColumnModel().getColumn(1);
             column.setCellEditor(new DefaultCellEditor(comboBox));
             DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-            renderer.setToolTipText("Click for combo box");
+            renderer.setToolTipText(bundle.getString("ChooseLinker"));
             column.setCellRenderer(renderer);
             /*scrollPane = new JScrollPane(table);
             scrollPane.setBackground(Color.orange);
@@ -75,11 +76,12 @@ public class NodeTable extends AbstractTableModel {
 
     public void setUpSportColumn(JTable table, TableColumn sportColumn, String[] linkers) {
         // Set up the editor for the sport cells.
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("app/Windows/Bundle");
         JComboBox comboBox = new JComboBox(linkers);
         sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
         // Set up tool tips for the sport cells.
         DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-        renderer.setToolTipText("Click for combo box");
+        renderer.setToolTipText(bundle.getString("ChooseLinker"));
         sportColumn.setCellRenderer(renderer);
     }
     

@@ -335,6 +335,7 @@ public class VMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewLinkerActionPerformed
 
     private void btnOpenFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenFileActionPerformed
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("app/Windows/Bundle");
         this.jMain.setEnabled(false);
         JFileChooser jf = new JFileChooser();
         int approve = jf.showOpenDialog(this);
@@ -407,7 +408,7 @@ public class VMain extends javax.swing.JFrame {
                             VMain vMain = this;
                             JPopupMenu popUpMenuHost = new JPopupMenu();
                             JMenuItem miConfigurar = new JMenuItem();
-                            miConfigurar.setText("Configurar Host");
+                            miConfigurar.setText(bundle.getString("VConfWorkSpace"));
                             miConfigurar.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     VConfHost vConfComputer = new VConfHost(ci, vMain);
@@ -416,7 +417,7 @@ public class VMain extends javax.swing.JFrame {
                             });
                             popUpMenuHost.add(miConfigurar);
                             JMenuItem miEliminar = new JMenuItem();
-                            miEliminar.setText("Eliminar Host");
+                            miEliminar.setText(bundle.getString("VRemoveWorkSpace"));
                             miEliminar.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     si.getWorkSpacePanel().remove(ci.getLblName());
@@ -484,7 +485,7 @@ public class VMain extends javax.swing.JFrame {
                             VMain vMain = this;
                             JPopupMenu popUpMenuHost = new JPopupMenu();
                             JMenuItem miConfigurar = new JMenuItem();
-                            miConfigurar.setText("Configurar Host");
+                            miConfigurar.setText(bundle.getString("VConfWorkSpace"));
                             miConfigurar.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     VConfRouter vConfRouter = new VConfRouter(ri, vMain);
@@ -493,7 +494,7 @@ public class VMain extends javax.swing.JFrame {
                             });
                             popUpMenuHost.add(miConfigurar);
                             JMenuItem miEliminar = new JMenuItem();
-                            miEliminar.setText("Eliminar Host");
+                            miEliminar.setText(bundle.getString("VRemoveWorkSpace"));
                             miEliminar.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     si.getWorkSpacePanel().remove(ri.getLblName());

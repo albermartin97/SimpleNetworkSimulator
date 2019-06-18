@@ -125,6 +125,7 @@ public class VConfRouter extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarConfRouterActionPerformed
 
     private void btnAceptarConfRouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarConfRouterActionPerformed
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("app/Windows/Bundle");
         this.setVisible(false);
         this.vMain.setRouting(false);
         this.ri.getVertex().getElement().setName(txtNameRouter.getText());
@@ -134,7 +135,7 @@ public class VConfRouter extends javax.swing.JFrame {
         ri.setName(txtNameRouter.getText());
         JPopupMenu popUpMenuHost = new JPopupMenu();
         JMenuItem miConfigurar = new JMenuItem();
-        miConfigurar.setText("Configurar Host");
+        miConfigurar.setText(bundle.getString("VConfWorkSpace"));
         miConfigurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VConfRouter vConfRouter = new VConfRouter(ri,vMain);
@@ -143,7 +144,7 @@ public class VConfRouter extends javax.swing.JFrame {
         });
         popUpMenuHost.add(miConfigurar);
         JMenuItem miEliminar = new JMenuItem();
-        miEliminar.setText("Eliminar Host");
+        miEliminar.setText(bundle.getString("VRemoveWorkSpace"));
         miEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 si.getWorkSpacePanel().remove(ri.getLblName());

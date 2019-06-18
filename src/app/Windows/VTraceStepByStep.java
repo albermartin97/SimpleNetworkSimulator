@@ -87,7 +87,7 @@ public class VTraceStepByStep extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Instante", "Origen", "Destino", "Enlace", "Tiempo", "Mensaje"
+                bundle.getString("Instant"), bundle.getString("Origin"), bundle.getString("Destination"),bundle.getString("Linker"), bundle.getString("Time"), bundle.getString("Message")
             }
         ) {
             Class[] types = new Class [] {
@@ -107,15 +107,6 @@ public class VTraceStepByStep extends javax.swing.JFrame {
         });
         jTEvents.getColumnModel().getColumn(0).setPreferredWidth(10);
         jScrollPane1.setViewportView(jTEvents);
-        if (jTEvents.getColumnModel().getColumnCount() > 0) {
-            jTEvents.getColumnModel().getColumn(0).setPreferredWidth(3);
-            jTEvents.getColumnModel().getColumn(1).setPreferredWidth(3);
-            jTEvents.getColumnModel().getColumn(2).setPreferredWidth(3);
-            jTEvents.getColumnModel().getColumn(3).setPreferredWidth(3);
-            jTEvents.getColumnModel().getColumn(4).setPreferredWidth(7);
-            jTEvents.getColumnModel().getColumn(5).setResizable(false);
-            jTEvents.getColumnModel().getColumn(5).setPreferredWidth(10);
-        }
 
         javax.swing.GroupLayout jTableTraceLayout = new javax.swing.GroupLayout(jTableTrace);
         jTableTrace.setLayout(jTableTraceLayout);
